@@ -1,32 +1,26 @@
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        Cat cat1 = new Cat("red-head", "Rudi", 1, 2.3, new String []{"lazy","bad","vengeful"});
+        Triangle triangle1 = new Triangle(3,4,5);
 
-        cat1.meow();
-        cat1.twitching();
+        System.out.println("Description of the triangle1: " + triangle1.toString());
+        System.out.println("Area of a triangle1: " + triangle1.getAreaTriangle());
 
-        System.out.println(cat1.toString());
+        Triangle triangle2 = new Triangle();
+
         System.out.println();
+        System.out.println("Description of the triangle2: " + triangle2.toString());
+        System.out.println("Area of a triangle2: " + triangle2.getAreaTriangle());
 
-        String[] featuresCats = cat1.getFeatures();
-        System.out.println("Cat's features: " + Arrays.toString(featuresCats));
+        triangle2.setA(5.3);
+        triangle2.setB(6.1);
+        triangle2.setC(8);
+
         System.out.println();
-
-        featuresCats[0] = "very active";
-        featuresCats[1] = "nise";
-        System.out.println("New cat's features: " + Arrays.toString(featuresCats));
-        System.out.println();
-
-        cat1.setFeatures(featuresCats);
-        cat1.setAge(2);
-        cat1.setColor("Black");
-
-        System.out.println(cat1.toString());
+        System.out.println("New description of the triangle1: " + triangle2.toString());
+        System.out.println("New area of a triangle2: " + triangle2.getAreaTriangle());
+        System.out.println("New area of a triangle2 (with rounding): " + triangle2.getAreaTriangleFormatPrint(2));
 
     }
-
 }
